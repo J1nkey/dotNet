@@ -1,0 +1,31 @@
+﻿@page
+@* Actually, a content view is a partial class that working with handler class *@
+@{  
+    // This is razor syntax for multlple line
+    Layout = null; // this is a property of Razor page, Layout is set the layout that will embedded HTML in this page into
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width;initial-scale=1.0" />
+        @* This is an example of razor syntax in single line *@
+        <title>@ViewData["Title"]</title>
+    </head>
+    <body>
+        <h1>Welcome to @ViewData["Title"] page</h1>
+        <h2>Current time: @DateTime.Now.ToLongDateString()</h2>
+        <p>@Greetings("Quang")</p>
+        <p></p>
+    </body>
+</html>
+
+@{
+    string Greetings(string name)       // we can create a function to call in this
+    {
+        return $"Hello, {name}";
+    }
+}
+
